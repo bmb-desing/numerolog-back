@@ -20,6 +20,8 @@ class CreatePredictionNumbersTable extends Migration
                 ->references('id')
                 ->on('predictions')
                 ->onDelete('cascade');
+            $table->string('number');
+            $table->text('text')->nullable();
             $table->timestamps();
         });
     }

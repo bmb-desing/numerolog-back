@@ -21,13 +21,19 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Свешников Александр',
                 'email' => 'info@bmb-design.ru',
                 'password' => bcrypt('23011985')
+            ],
+            [
+                'name' => 'Ольга Перцева',
+                'email' => 'hochumacao@gmail.com',
+                'password' => bcrypt('0511Perceva0511')
             ]
-            
+
         ];
         $users = \App\User::all();
-        if (count($users) != 0) {
-            \App\User::create();
-
+        if (count($users) == 0) {
+            foreach ($usersArray as $item) {
+                \App\User::create($item);
+            }
         }
     }
 }

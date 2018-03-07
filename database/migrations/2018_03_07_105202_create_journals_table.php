@@ -16,6 +16,7 @@ class CreateJournalsTable extends Migration
         Schema::create('journals', function (Blueprint $table) {
             $table->increments('id');
             $table->text('meta');
+            $table->string('alias')->unique();
             $table->string('thumbnail')->nullable();
             $table->text('short_text')->nullable();
             $table->text('text');

@@ -26,6 +26,9 @@ class PredictionNumber extends Model
     protected $fillable = [
         'prediction_id', 'number', 'text'
     ];
+    protected $casts = [
+        'number' => 'integer'
+    ];
     public function prediction() {
         return $this->belongsTo('App\Prediction', 'prediction_id');
     }

@@ -18,7 +18,8 @@ class CreateOrdersTable extends Migration
             $table->string('date');
             $table->string('matrix');
             $table->string('destiny');
-            $table->enum('status', ['no-pay', 'await', 'pay'])->default('no-pay');
+            $table->string('email');
+            $table->enum('status', ['no-pay', 'await', 'pay'])->default('await');
             $table->timestamps();
         });
     }

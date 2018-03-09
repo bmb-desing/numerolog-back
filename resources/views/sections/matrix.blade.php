@@ -125,7 +125,7 @@
                         </div>
                     </div>
                 </div>
-                <form action="#" method="post">
+                <form action="{{route('payment')}}" method="post">
                     <input type="hidden" name="matrix">
                     <input type="hidden" name="destiny">
                     <input type="hidden" name="dates">

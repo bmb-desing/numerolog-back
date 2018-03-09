@@ -25,6 +25,8 @@ class Prediction extends Model
         'name', 'name_rus'
     ];
     public function numbers() {
-        return $this->hasMany('App\PredictionNumber', 'prediction_id');
+        $pred = $this->hasMany('App\PredictionNumber', 'prediction_id');
+        return $pred->orderBy('number', 'asc');
+
     }
 }

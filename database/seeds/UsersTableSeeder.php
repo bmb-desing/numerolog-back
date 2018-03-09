@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
         $usersArray = [
             [
                 'name' => 'Степа Кузовов',
-                'email' => 'xolms111@bmb-design.ru',
+                'email' => 'xolms@bmb-design.ru',
                 'password' => bcrypt('657216as')
             ],
             [

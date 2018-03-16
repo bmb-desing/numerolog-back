@@ -17,7 +17,7 @@
                     <div class="price__item">
                         <p>С консультацией</p><b>{{$item->price['ru_consul']}} руб<br/>{{$item->price['dollar_consul']}}$</b>
                     </div>
-                    <button data-theme="{{$item->name}}" class="modal__open price__button">Получить</button>
+                    <a href="whatsapp://send?text={{urlencode('Тема: '.$item->name)}}&phone={{$social['whatsapp']}}&abid={{$social['whatsapp']}}" data-theme="{{$item->name}}" class="price__button">Получить</a>
                 </div>
             </div>
         @endforeach

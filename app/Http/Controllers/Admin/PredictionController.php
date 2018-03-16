@@ -82,6 +82,7 @@ class PredictionController extends Controller
                 'text' => $request->text
             ]);
             if ($status) {
+                $this->clearCache();
                 \Session::flash('flash_message', 'Успешно добавлено');
                 return redirect()->back();
             }
@@ -128,6 +129,7 @@ class PredictionController extends Controller
             'text' => $request->text
         ])->save();
         if ($status) {
+            $this->clearCache();
             \Session::flash('flash_message', 'Успешно обновлено');
             return redirect()->back();
         }
@@ -145,6 +147,7 @@ class PredictionController extends Controller
         $pred = PredictionNumber::findOrFail($id);
         $status = $pred->delete();
         if($status) {
+            $this->clearCache();
             \Session::flash('flash_message','Успешно удалено');
             return redirect()->back();
         }

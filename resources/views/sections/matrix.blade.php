@@ -1,3 +1,4 @@
+<?php $matrix = 0;?>
 <div class="matrix">
     <h2 class="matrix__title">Узнай<span> прямо сейчас</span> свою психоматрицу</h2>
     <p class="matrix__text">Психоматрица по дате рождения (Квадрат Пифагора)</p>
@@ -125,6 +126,7 @@
                         </div>
                     </div>
                 </div>
+                @if($matrix != 0)
                 <form action="{{route('payment')}}" method="post">
                     <input type="hidden" name="matrix">
                     <input type="hidden" name="destiny">
@@ -134,6 +136,7 @@
                     <button class="matrix__button">Получить моментально</button>
                     <p class="matrix__small">Моментально на Ваш E-mail нумеролог пришлет заказанный Вами рассчет по дате</p>
                 </form>
+                @endif
             </div>
         </div>
     </div>

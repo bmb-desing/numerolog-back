@@ -11,14 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/', 'IndexController@index');
+Route::get('journal', 'JournalController@index')->name('journal.all');
+Route::get('journal/{item}', 'JournalController@item')->name('journal.item');
 Route::post('payment', 'PaymentController@post')->name('payment');
 Route::post('payment-result', 'PaymentController@result')->name('payment-result');
 Route::group(['middleware' => ['auth', 'role:admin'], 'prefix' => 'admincp'] , function() {
-    Route::get('/', 'Admin\AdminController@index');
+    Route::get('/', 'Admin\AdminController@index')->name('admin.index');
     Route::resource('prediction', 'Admin\PredictionController');
+    Route::resource('price', 'Admin\PriceController');
+    Route::resource('journal', 'Admin\JournalController');
+    Route::get('social', 'Admin\SocialController@get')->name('social.get');
+    Route::post('social', 'Admin\SocialController@post')->name('social.post');
+    Route::resource('pages', 'Admin\PageController');
+    Route::get('sitemap', 'Admin\SitemapController@siteMap')->name('sitemap');
 });
 Route::group(['middleware' => 'guest'], function (){
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

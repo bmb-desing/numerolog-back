@@ -1,7 +1,10 @@
 @extends('layouts.layout')
 @section('meta')
-    <title>123</title>
-    <meta name="description" content="123">
+    <title>{{$meta->title}}</title>
+    <meta property="og:title" content="{{$meta->title}}"/>
+    <meta property="og:description" content="{{$meta->description}}"/>
+    <meta name="description" content="{{$meta->description}}">
+    <meta property="og:image" content="{{$meta->thumbnail}}">
 @endsection
 @section('content')
     <header class="header">
@@ -38,6 +41,8 @@
     </div>
     @include('sections.matrix')
     @include('sections.inst')
-    @include('sections.journal')
+
+    @include('sections.usluga', ['price' => $price])
+    @include('sections.journal', ['journal' => $journal])
 
 @endsection

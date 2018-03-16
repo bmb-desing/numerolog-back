@@ -45,7 +45,7 @@ class Journal extends Model
 {
     protected $table = 'journals';
     protected $fillable = [
-        'meta', 'thumbnail', 'short_text', 'text', 'social_network', 'publish', 'telegram_link', 'telegram_text', 'inst_link', 'vk_link', 'inst_text', 'vk_text', 'published_at'
+        'meta', 'thumbnail', 'alias', 'short_text', 'text', 'social_network', 'publish', 'telegram_link', 'telegram_text', 'inst_link', 'vk_link', 'inst_text', 'vk_text', 'published_at'
     ];
     protected $casts = [
         'meta' => 'array'

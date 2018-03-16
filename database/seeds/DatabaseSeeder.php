@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PredictionTableSeeder::class);
         $this->call(PredictionsNumberTableSeeder::class);
         $this->call(SocialTableSeeder::class);
+        $this->call(PagesTableSeeder::class);
     }
 }

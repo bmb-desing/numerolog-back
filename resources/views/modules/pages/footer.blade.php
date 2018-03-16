@@ -3,7 +3,7 @@
         <a href="whatsapp://send?text={{urldecode('Добрый вечер я с сайта нумерологии')}}&phone={{$social['whatsapp']}}&abid={{$social['whatsapp']}}" data-action="share/whatsapp/share" class="footer__link footer__link_whatsapp"></a>
         <a href="{{$social['instagram']}}" class="footer__link footer__link_inst"></a>
         <a href="{{$social['vk']}}" class="footer__link footer__link_vk"></a>
-        <a href="tg://join?invite={{$social['instagram']}}" class="footer__link footer__link_telegram"></a>
+        <a href="tg://join?invite={{$social['telegram']}}" class="footer__link footer__link_telegram"></a>
         <a href="{{$social['youtube']}}" class="footer__link footer__link_youtube"></a>
     </div>
 </footer>
